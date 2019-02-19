@@ -1,7 +1,7 @@
 # mongoose-test-project
 MongoDB CRUD operations test project using mongoose
 
-To install all the dependencies, use command
+To install all the dependencies, use command<br>
     npm install --save
  
 To start the server, use command
