@@ -1,0 +1,40 @@
+/* Custoum Styles */
+img.logo {
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+}
+h1.heading {
+    margin: 70px 0px 0px -150px;
+    text-align: center;
+}
+.insert {
+    background-color: darkcyan;
+    padding: 12px;
+}
+.btn {
+    background-color: teal;
+}
+.get-data {
+    background-color: thistle;
+    padding: 12px;
+}
+h3 {
+    font-size: 20px;
+}
+.update {
+    background-color: tan;
+    padding: 12px;
+}
+.delete {
+    background-color: cadetblue;
+    padding: 12px;
+}
+
+/* Mobile Compatibility */
+
+@media screen and (max-width: 650px) {
+    h1.heading {
+        margin: 0;
+    }
+}

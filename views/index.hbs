@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MongDB demo project</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+    {{!-- Heading with Img --}}
+    <div class="row">
+        <div class="col-md-1 col-sm-12">
+            <img src="images/my-logo.jpg" class="logo">
+        </div>
+        <div class="col-md-11 col-sm-12">
+            <h1 class="text-secondary heading">MongoDB CRUD project using mongoose</h1>
+        </div>
+    </div>
+    {{!-- Container --}}
+    <div class="container-fluid">
+        <div class="row">
+            {{!-- Insert section --}}
+            <div class="col-md-3 col-sm-12 insert">
+                <h1>Insert into DB</h1>
+                <form action="/insert" method="POST">
+                    <input type="text" name="userName" class="form-control" placeholder="Enter your name"><br>
+                    <input type="text" name="userEmail" class="form-control" placeholder="Enter your email"><br>
+                    <input type="text" name="userText" class="form-control" placeholder="Enter some random text"><br>
+                    <input type="submit" value="INSERT" class="form-control" class="btn btn-lg">
+                </form>
+            </div>
+            {{!-- GetData section --}}
+            <div class="col-md-3 col-sm-12 get-data">
+                <h1>Get from DB</h1>
+                <form action="/loaddata" method="GET">
+                    <button class="btn btn-lg">Load Data</button>
+                    <article class="items">
+                        {{# each items}}
+                            <h3 class="text-success">Name: {{ this.name }}</h3>
+                            <h3 class="text-success">Email: {{ this.email }}</h3>
+                            <h3 class="text-success">Text: {{ this.text }}</h3>
+                            <h3 class="text-success">ID: {{ this.id }}</h3>
+                            <hr>
+                        {{/each}}
+                    </article>
+                </form>
+            </div>
+            {{!-- Update section --}}
+            <div class="col-md-3 col-sm-12 update">
+                <h1>Update Data</h1>
+                <form action="/update" method="POST">
+                    <input type="text" name="userId" class="form-control" placeholder="Enter ID">
+                    <small>Data updation is based on ID</small><br>
+                    <input type="text" name="userName" class="form-control" placeholder="Enter your name"><br>
+                    <input type="text" name="userEmail" class="form-control" placeholder="Enter your email"><br>
+                    <input type="text" name="userText" class="form-control" placeholder="Enter some random text"><br>
+                    <input type="submit" value="UPDATE" class="form-control" class="btn btn-lg">
+                </form>
+            </div>
+            {{!-- Delete section --}}
+            <div class="col-md-3 col-sm-12 delete">
+                <h1>Delete Data</h1>
+                <form action="/delete" method="POST">
+                    <input type="text" name="userId" class="form-control" placeholder="Enter ID"><br>
+                    <input type="submit" value="DELETE" class="form-control" class="btn btn-lg">
+                </form>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
